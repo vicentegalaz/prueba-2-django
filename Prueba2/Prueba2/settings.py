@@ -78,7 +78,9 @@ WSGI_APPLICATION = 'Prueba2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'DJANGO_ACTOR',
+        'USER': 'root',
+        'passwd': 'pass'
     }
 }
 

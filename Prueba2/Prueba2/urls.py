@@ -20,5 +20,9 @@ from Actor import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("",views.display)
+    path('', views.pantallaInicio),
+    path('agregarActor/', views.agregarActor),
+    path('listaActor/', views.listadoActor),
+    path('modificar/<int:id>', views.actualizarActor), 
+    path('eliminar/<int:id>', views.eliminarActor)
 ]

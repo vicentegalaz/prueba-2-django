@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>LISTA DE ACTORES</h1>
+    {%if actores %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Genero</th>
+                <th>Nacionalidad</th>
+                <th>Premios</th>
+                <th>Anio de debut</th>
+                <th>--</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for act in actores %}
+            <tr>
+                <td scope="row">{{act.id}}</td>
+                <td>{{ act.nombre }}</td>
+                <td>{{ act.edad }}</td>
+                <td>{{ act.genero }}</td>
+                <td>{{ act.nacionalidad }}</td>
+                <td>{{ act.premios }}</td>
+                <td>{{ act.anio_debut }}</td>
+                <td><a href="/modificar/{{ act.id }}">Actualizar</a></td>
+                <td><a href="/eliminar/{{ act.id }}" >Eliminar</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+    {% else %}
+        <div class="alert alert-info">no hay actores</div>
+    {% endif %}
+</body>
+</html>
